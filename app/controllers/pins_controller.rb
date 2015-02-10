@@ -40,15 +40,8 @@ class PinsController < ApplicationController
 	end
 
 	def upvote
-	  @pin = Pin.find(params[:id])
-	  @pin.upvote_by current_user
-	  redirect_to :back
-	end
-	 
-	def downvote
-	  @pin = Pin.find(params[:id])
-	  @pin.downvote_by current_user
-	  redirect_to :back
+		@pin.upvote_by current_user
+		redirect_to :back
 	end
 
 	private
